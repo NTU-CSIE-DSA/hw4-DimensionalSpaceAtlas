@@ -1,0 +1,8 @@
+{
+  "official.cpp": {
+    "verdict": "model_solution"
+  },
+  "brute_force.cpp": {
+    "verdict": "time_limit"
+  }
+}

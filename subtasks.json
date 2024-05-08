@@ -1,14 +1,31 @@
 {
-    "global_validators": ["validator.cpp"],
+    "global_validators": [
+        "validator.cpp"
+    ],
     "subtasks": {
         "samples": {
             "index": 0,
             "score": 0,
             "validators": []
         },
-        "full": {
+        "small_NT": {
             "index": 1,
-            "score": 100,
+            "score": 10,
+            "validators": ["validator_sub1"]
+        },
+        "only_12": {
+            "index": 2,
+            "score": 20,
+            "validators": ["validator_sub2"]
+        },
+        "small_T": {
+            "index": 3,
+            "score": 20,
+            "validators": ["validator_sub3"]
+        },
+        "full": {
+            "index": 4,
+            "score": 50,
             "validators": []
         }
     }

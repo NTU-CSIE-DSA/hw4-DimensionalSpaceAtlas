@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
-#define MAXN 1000000
 
 
 struct Node {
@@ -129,7 +128,7 @@ int main() {
   for (int i = 1; i <= N; i++) {
     int a;
     scanf("%d", &a);
-    sequence = insert(sequence, i, a);
+    sequence = insert(sequence, i-1, a);
   }
   int op;
   while (T--) {

@@ -3,44 +3,44 @@ manual sample-1.in
 
 @subtask small_NT
 @include samples
-random -N 8 -T 40 -max_v 20 -w1 0 -w2 0
-random -N 5 -T 40 -max_v 100
-random -N 20 -T 20 -max_v 100
-random -N 30 -T 0 -max_v 100
-random -N 100 -T 100 -max_v 100
+gen -N 8 -T 40 -max_v 20 -w1 0 -w2 0
+gen -N 5 -T 40 -max_v 100
+gen -N 20 -T 20 -max_v 100
+gen -N 30 -T 0 -max_v 100
+gen -N 100 -T 100 -max_v 100
 
-random -N 1000 -T 1000
-random -N 1000 -T 999
-random -N 999 -T 1000
-random -N 1000 -T 1000 -w1 0
-random -N 1000 -T 1000 -w1 8
-random -N 1000 -T 1000 -w3 8
-random -N 1000 -T 1000 -w1 8 -w3 8
-random -N 1000 -T 1000 -w1 0 -w2 0
-random -N 1000 -T 1000 -w2 0 -w3 0
+gen -N 1000 -T 1000
+gen -N 1000 -T 999
+gen -N 999 -T 1000
+gen -N 1000 -T 1000 -w1 0
+gen -N 1000 -T 1000 -w1 8
+gen -N 1000 -T 1000 -w3 8
+gen -N 1000 -T 1000 -w1 8 -w3 8
+gen -N 1000 -T 1000 -w1 0 -w2 0
+gen -N 1000 -T 1000 -w2 0 -w3 0
 
-random -N 0 -T 1000
+gen -N 0 -T 1000
 
-random -N 1000 -T 1000 -max_v 0
-random -N 1000 -T 1000 -max_v 1
-random -N 1000 -T 1000 -max_v 2
-random -N 1000 -T 1000 -max_v 10
-random -N 1000 -T 1000 -min_v 1000000000
-random -N 1000 -T 1000 -min_v 999999999
-random -N 1000 -T 1000 -min_v 999999998
-random -N 1000 -T 1000 -min_v 888888888
-random -N 1000 -T 1000 -min_v 555555555 -max_v 666666666
+gen -N 1000 -T 1000 -max_v 0
+gen -N 1000 -T 1000 -max_v 1
+gen -N 1000 -T 1000 -max_v 2
+gen -N 1000 -T 1000 -max_v 10
+gen -N 1000 -T 1000 -min_v 1000000000
+gen -N 1000 -T 1000 -min_v 999999999
+gen -N 1000 -T 1000 -min_v 999999998
+gen -N 1000 -T 1000 -min_v 888888888
+gen -N 1000 -T 1000 -min_v 555555555 -max_v 666666666
 
-length -N 15 -T 40 -max_v 99 -final_len 0
-length -N 200 -T 1000 -final_len 0
-length -N 200 -T 1000 -min_v 999000000 -final_len 0
-length -N 500 -T 1000 -min_v 999000000 -min_len 490 -max_len 510
+gen -N 15 -T 40 -max_v 99 -final_len 0
+gen -N 200 -T 1000 -final_len 0
+gen -N 200 -T 1000 -min_v 999000000 -final_len 0
+gen -N 500 -T 1000 -min_v 999000000 -min_len 490 -max_len 510
 
 @testset nop3
-random -N 1000 -T 1000 -w1 0 -w3 0
-random -N 1000 -T 1000 -w3 0
-random -N 0 -T 0
-random -N 1000 -T 0
+gen -N 1000 -T 1000 -w1 0 -w3 0
+gen -N 1000 -T 1000 -w3 0
+gen -N 0 -T 0
+gen -N 1000 -T 0
 
 
 @subtask only_12

@@ -26,13 +26,13 @@ Options:
                 Too large (n_ins_p / N) slow the speed of generator
                 -1 means not specified
                 (default -1)
-  -ins_p        The position that can be inserted
+  -ins_p        The positions (ins_p and ins_p+1) that can be inserted
                 If ins_p is greater than the length of the current sequence, 
                 new elements will only be append at the end of the sequence
                 If ins_p != -1, n_ins_p will be ignored.
                 -1 means not specified
                 (default -1)
-  -del_p        The position that can be deleted
+  -del_p        The positions (del_p and del_p+1) that can be deleted
                 If del_p is greater than the length of the current sequence, 
                 The last element will be deleted
                 -1 means not specified

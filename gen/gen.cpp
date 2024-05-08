@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
 		int op = rnd.any(operations);
 		cout << op << ' ';
 		if (op == 1) {
-			if (del_p != -1) cout << min(del_p, len);
+			if (del_p != -1) cout << min(rnd.next(del_p, del_p+1), len);
 			else cout << rnd.next(1, len);
 			len--;
 			if (n_ins_p != -1 && v_ins_ps.size() && *v_ins_ps.rbegin() > len) {
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
 				v_ins_ps.pop_back();
 			}
 		} else if (op == 2) {
-			if (ins_p != -1) cout << min(ins_p, len) << ' ' << rnd.next(min_v, max_v);
+			if (ins_p != -1) cout << min(rnd.next(ins_p, ins_p+1), len) << ' ' << rnd.next(min_v, max_v);
 			else if (n_ins_p != -1) {
 				if (v_ins_ps.size()) cout << rnd.any(v_ins_ps) << ' ' << rnd.next(min_v, max_v);
 				else cout << rnd.next(0, len) << ' ' << rnd.next(min_v, max_v);

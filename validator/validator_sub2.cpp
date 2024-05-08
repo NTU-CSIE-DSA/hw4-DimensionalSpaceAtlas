@@ -31,9 +31,10 @@ int main() {
       inf.readInt(0, MAXv, "b");
       len++;
     } else if (op == 3) {
-      inf.readInt(1, len, "l");
+      int l = inf.readInt(1, len, "l");
       inf.readSpace();
-      inf.readInt(1, len, "r");
+      int r = inf.readInt(1, len, "r");
+      inf.ensure(l <= r);
     }
     inf.readEoln();
   }

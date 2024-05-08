@@ -14,13 +14,24 @@ int main(int argc, char* argv[]) {
 	int w1 = opt<int>("w1", 1);
 	int w2 = opt<int>("w2", 1);
 	int w3 = opt<int>("w3", 1);
+	int n_ins_p = opt<int>("n_ins_p", -1);
+	int ins_p = opt<int>("ins_p", -1);
+	int del_p = opt<int>("del_p", -1);
+
+	if (ins_p != -1) n_ins_p = -1;
 
 	assert(max_len >= N);
 	assert(max_len >= min_len);
 	assert(final_len == -1 || (min_len <= final_len && final_len <= max_len));
+	assert(n_ins_p);
+	assert(del_p);
+
+	set<int> s_ins_ps;
+	if (n_ins_p != -1) while (s_ins_ps.size() < n_ins_p) s_ins_ps.insert(rnd.next(0, N));
+	vector<int> v_ins_ps = vector<int>(s_ins_ps.begin(), s_ins_ps.end());
+	stack<int> nv_ins_ps;
 
 	cout << N << ' ' << T << '\n';
-	
 	for (int i = 1; i <= N; i++) {
 		cout << (rnd.next(min_v, max_v)) << " \n"[i==N];
 	}
@@ -43,11 +54,24 @@ int main(int argc, char* argv[]) {
 		int op = rnd.any(operations);
 		cout << op << ' ';
 		if (op == 1) {
-			cout << rnd.next(1, len);
+			if (del_p != -1) cout << min(del_p, len);
+			else cout << rnd.next(1, len);
 			len--;
+			if (n_ins_p != -1 && v_ins_ps.size() && *v_ins_ps.rbegin() > len) {
+				nv_ins_ps.push(*v_ins_ps.rbegin());
+				v_ins_ps.pop_back();
+			}
 		} else if (op == 2) {
-			cout << rnd.next(0, len) << ' ' << rnd.next(min_v, max_v);
+			if (ins_p != -1) cout << min(ins_p, len) << ' ' << rnd.next(min_v, max_v);
+			else if (n_ins_p != -1) {
+				if (v_ins_ps.size()) cout << rnd.any(v_ins_ps) << ' ' << rnd.next(min_v, max_v);
+				else cout << rnd.next(0, len) << ' ' << rnd.next(min_v, max_v);
+			} else cout << rnd.next(0, len) << ' ' << rnd.next(min_v, max_v);
 			len++;
+			if (n_ins_p != -1 && !nv_ins_ps.empty() && nv_ins_ps.top() <= len) {
+				v_ins_ps.push_back(nv_ins_ps.top());
+				nv_ins_ps.pop();
+			}
 		} else if (op == 3) {
 			int l = rnd.next(1, len);
 			int r = rnd.next(l, len);

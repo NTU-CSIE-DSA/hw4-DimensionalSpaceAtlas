@@ -36,6 +36,23 @@ gen -N 200 -T 1000 -final_len 0
 gen -N 200 -T 1000 -min_v 999000000 -final_len 0
 gen -N 500 -T 1000 -min_v 999000000 -min_len 490 -max_len 510
 
+gen -N 1000 -T 1000 -n_ins_p 1
+gen -N 1000 -T 1000 -n_ins_p 5
+gen -N 100 -T 1000 -n_ins_p 8
+gen -N 1000 -T 1000 -n_ins_p 3 -del_p 500
+
+gen -N 1000 -T 1000 -ins_p 0 -w2 8
+gen -N 1000 -T 1000 -ins_p 987654321 -w2 8
+gen -N 1000 -T 1000 -del_p 1 -w1 8
+gen -N 1000 -T 1000 -del_p 987654321 -w1 8
+gen -N 1000 -T 1000 -ins_p 0 -del_p 1 -w1 4 -w2 4
+gen -N 1000 -T 1000 -ins_p 987654321 -del_p 1 -w1 4 -w2 4
+gen -N 1000 -T 1000 -ins_p 0 -del_p 987654321 -w1 4 -w2 4
+gen -N 1000 -T 1000 -ins_p 987654321 -del_p 987654321 -w1 4 -w2 4
+gen -N 1000 -T 1000 -ins_p 323 -w2 8
+gen -N 1000 -T 1000 -ins_p 500 -w2 8
+gen -N 1000 -T 1000 -ins_p 697 -w2 8
+
 @testset nop3
 gen -N 1000 -T 1000 -w1 0 -w3 0
 gen -N 1000 -T 1000 -w3 0

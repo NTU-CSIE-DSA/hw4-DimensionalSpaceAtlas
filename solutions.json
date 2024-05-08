@@ -3,6 +3,7 @@
     "verdict": "model_solution"
   },
   "brute_force.cpp": {
-    "verdict": "time_limit"
+    "verdict": "time_limit",
+    "excect": "small_NT"
   }
 }

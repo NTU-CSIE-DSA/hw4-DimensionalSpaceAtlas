@@ -13,13 +13,13 @@ int main() {
 	inf.readEoln();
 
   for (int i = 1; i <= N; i++) {
-    inf.readInt(1, MAXv, "a");
+    inf.readInt(0, MAXv, "a");
     if (i != N) inf.readSpace();
     else inf.readEoln();
   }
   int len = N;
   while (T--) {
-    int op = inf.readInt(1, 2, "op");
+    int op = inf.readInt(1, 3, "op");
     inf.readSpace();
     if (op == 1) {
       inf.ensure(len >= 1);
@@ -28,7 +28,7 @@ int main() {
     } else if (op == 2) {
       inf.readInt(0, len, "k");
       inf.readSpace();
-      inf.readInt(1, MAXv, "b");
+      inf.readInt(0, MAXv, "b");
       len++;
     } else if (op == 3) {
       inf.readInt(1, len, "l");

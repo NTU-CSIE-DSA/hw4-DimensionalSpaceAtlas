@@ -1,5 +1,6 @@
 @subtask samples
 manual sample-1.in
+manual sample-2.in
 
 
 @subtask small_NT

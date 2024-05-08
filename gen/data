@@ -12,7 +12,6 @@ random -N 100 -T 100 -max_v 100
 random -N 1000 -T 1000
 random -N 1000 -T 999
 random -N 999 -T 1000
-random -N 1000 -T 1000 -w3 0
 random -N 1000 -T 1000 -w1 0
 random -N 1000 -T 1000 -w1 8
 random -N 1000 -T 1000 -w3 8
@@ -32,8 +31,14 @@ random -N 1000 -T 1000 -min_v 999999998
 random -N 1000 -T 1000 -min_v 888888888
 random -N 1000 -T 1000 -min_v 555555555 -max_v 666666666
 
+length -N 15 -T 40 -max_v 99 -final_len 0
+length -N 200 -T 1000 -final_len 0
+length -N 200 -T 1000 -min_v 999000000 -final_len 0
+length -N 500 -T 1000 -min_v 999000000 -min_len 490 -max_len 510
+
 @testset nop3
 random -N 1000 -T 1000 -w1 0 -w3 0
+random -N 1000 -T 1000 -w3 0
 random -N 0 -T 0
 random -N 1000 -T 0
 

@@ -2,14 +2,12 @@
 #include "testlib.h"
 using namespace std;
 
-const int MAXN = 1'000'000;
-const int MAXT = 1'000'000;
-
 int main(int argc, char* argv[]) {
 	registerGen(argc, argv, 1);
-	int N = opt<int>("N");
-	int T = opt<int>("T");
-	const int MAXv = opt<int>("MAXv", 1'000'000'000);
+	int N = opt<int>("N", 1'000'000);
+	int T = opt<int>("T", 1'000'000);
+	const int max_v = opt<int>("max_v", 1'000'000'000);
+	const int min_v = opt<int>("min_v", 0);
 
 	cout << N << ' ' << T << '\n';
 
@@ -18,7 +16,7 @@ int main(int argc, char* argv[]) {
 	int w3 = opt<int>("w3", 1);
 	
 	for (int i = 1; i <= N; i++) {
-		cout << (rnd.next(0, MAXv)) << " \n"[i==N];
+		cout << (rnd.next(min_v, max_v)) << " \n"[i==N];
 	}
 	int len = N;
 	while (T--) {
@@ -35,7 +33,7 @@ int main(int argc, char* argv[]) {
 			cout << rnd.next(1, len);
 			len--;
 		} else if (op == 2) {
-			cout << rnd.next(0, len) << ' ' << rnd.next(0, MAXv);
+			cout << rnd.next(0, len) << ' ' << rnd.next(min_v, max_v);
 			len++;
 		} else if (op == 3) {
 			int l = rnd.next(1, len);

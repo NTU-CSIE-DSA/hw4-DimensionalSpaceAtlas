@@ -7,9 +7,9 @@ const int MAXv = 1'000'000'000;
 
 int main() {
 	registerValidation();
-  int N = inf.readInt(1, MAXN, "N");
+  int N = inf.readInt(0, MAXN, "N");
 	inf.readSpace();
-	int T = inf.readInt(1, MAXT, "T");
+	int T = inf.readInt(0, MAXT, "T");
 	inf.readEoln();
 
   for (int i = 1; i <= N; i++) {

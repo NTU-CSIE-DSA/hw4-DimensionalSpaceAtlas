@@ -17,6 +17,7 @@ Options:
   -min_len      The minimum possible length of the sequence for all time
                 (default 0)
   -final_len    The exact length of the sequence after all operations
+                If w3=0, use it carefully to avoid impossible assignment
                 -1 means not specified
                 (default -1)
   -n_ins_p      The number of positions that can be inserted

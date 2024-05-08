@@ -43,11 +43,11 @@ int main(int argc, char* argv[]) {
 		assert(final_len == -1 || abs(final_len - len) <= T+1);
 		vector<int> operations;
 		if (final_len == -1 || abs(final_len - len) < T+1) {
-			if (len < max_len && (final_len == -1 || len+1 - final_len < T)) 
+			if (w2 && len < max_len && (final_len == -1 || len+1 - final_len <= T)) 
 				for (int i = 0; i < w2; i++) operations.push_back(2);
-			if (len > min_len && (final_len == -1 || final_len - (len-1) < T))
+			if (w1 && len > min_len && (final_len == -1 || final_len - (len-1) <= T))
 				for (int i = 0; i < w1; i++) operations.push_back(1);
-			if (len) for (int i = 0; i < w3; i++) operations.push_back(3);
+			if (w3 && len) for (int i = 0; i < w3; i++) operations.push_back(3);
 		} else {
 			if (len < final_len) operations.push_back(2);
 			else if (len > final_len) operations.push_back(1);

@@ -1,8 +1,30 @@
 @subtask samples
-manual example-01.in
+manual sample-1.in
+
+@subtask small_NT
+@include samples
+random -N 1000 -T 1000
+random -N 1000 -T 999
+random -N 999 -T 1000
+random -N 1000 -T 1000 -w3 0
+random -N 1000 -T 1000 -w1 0
+random -N 1000 -T 1000 -w1 8
+random -N 1000 -T 1000 -w3 8
+random -N 0 -T 1000
+@testset nop3
+random -N 1000 -T 1000 -w1 0 -w3 0
+random -N 1000 -T 1000 -w1 8 -w3 8
+random -N 0 -T 0
+random -N 1000 -T 0
+
+@subtask only_12
+@include nop3
+
+@subtask small_T
+@include small_NT
+@include only_12
 
 @subtask full
-@include samples
-manual small-1.in
-gen1	20
-gen1	30
+@include small_NT
+@include only_12
+@include small_T

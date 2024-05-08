@@ -17,6 +17,8 @@ int main(int argc, char* argv[]) {
 	int n_ins_p = opt<int>("n_ins_p", -1);
 	int ins_p = opt<int>("ins_p", -1);
 	int del_p = opt<int>("del_p", -1);
+	int min_range = opt<int>("min_range", 1);
+	int max_range = opt<int>("max_range", 10'000'000);
 
 	if (ins_p != -1) n_ins_p = -1;
 
@@ -25,9 +27,10 @@ int main(int argc, char* argv[]) {
 	assert(final_len == -1 || (min_len <= final_len && final_len <= max_len));
 	assert(n_ins_p);
 	assert(del_p);
+	assert(min_range <= max_range);
 
 	set<int> s_ins_ps;
-	if (n_ins_p != -1) while (s_ins_ps.size() < n_ins_p) s_ins_ps.insert(rnd.next(0, N));
+	if (n_ins_p != -1) while ((int)s_ins_ps.size() < n_ins_p) s_ins_ps.insert(rnd.next(0, N));
 	vector<int> v_ins_ps = vector<int>(s_ins_ps.begin(), s_ins_ps.end());
 	stack<int> nv_ins_ps;
 
@@ -73,8 +76,8 @@ int main(int argc, char* argv[]) {
 				nv_ins_ps.pop();
 			}
 		} else if (op == 3) {
-			int l = rnd.next(1, len);
-			int r = rnd.next(l, len);
+			int l = rnd.next(1, max(1, len+1-min_range));
+			int r = rnd.next(min(len, l+min_range-1), min(len, l+max_range-1));
 			cout << l << ' ' << r;
 		}
 		cout << '\n';

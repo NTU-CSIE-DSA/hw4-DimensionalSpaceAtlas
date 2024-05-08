@@ -53,6 +53,10 @@ gen -N 1000 -T 1000 -ins_p 323 -w2 8
 gen -N 1000 -T 1000 -ins_p 500 -w2 8
 gen -N 1000 -T 1000 -ins_p 697 -w2 8
 
+gen -N 1000 -T 1000 -max_range 1
+gen -N 10 -T 1000 -max_range 1
+gen -N 1000 -T 1000 -min_range 850 -max_range 950 -min_v 999000000 -w1 0 -w2 0
+
 @testset nop3
 gen -N 1000 -T 1000 -w1 0 -w3 0
 gen -N 1000 -T 1000 -w3 0

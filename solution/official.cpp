@@ -100,11 +100,13 @@ struct Node *remove(struct Node *root, int k) {
 }
 
 long long calc_sum(struct Node *root, int l, int r, int shift) {
-  assert(root);
+  if (!root) return 0;
   assert(l <= r);
   int ord = order(root, shift);
   int L = shift + 1, R = shift + root->size;
-  if (L <= l && R >= r) return root->sum;
+  // printf("l: %d, r: %d\n", l, r);
+  // printf("%d %d %lld %d %d\n", ord, root->value, root->sum, L, R);
+  if (l <= L && r >= R) return root->sum;
   long long sum = 0;
   if (l <= ord && r >= ord) sum += root->value;
   if (l < ord) sum += calc_sum(root->left, l, r, shift);
@@ -146,6 +148,8 @@ int main() {
       printf("%lld\n", calc_sum(sequence, l, r, 0));
     }
   }
+  if(sequence) printf("%d\n", sequence->size);
+  else printf("0\n");
   traverse(sequence);
   printf("\n");
 	return 0;

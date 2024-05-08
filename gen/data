@@ -3,6 +3,11 @@ manual sample-1.in
 
 @subtask small_NT
 @include samples
+random -N 8 -T 40 -MAXv 20 -w1 0 -w2 0
+random -N 5 -T 40 -MAXv 100
+random -N 20 -T 20 -MAXv 100
+random -N 30 -T 0 -MAXv 100
+random -N 100 -T 100 -MAXv 100
 random -N 1000 -T 1000
 random -N 1000 -T 999
 random -N 999 -T 1000
@@ -11,6 +16,7 @@ random -N 1000 -T 1000 -w1 0
 random -N 1000 -T 1000 -w1 8
 random -N 1000 -T 1000 -w3 8
 random -N 1000 -T 1000 -w1 8 -w3 8
+random -N 1000 -T 1000 -w1 0 -w2 0
 random -N 0 -T 1000
 @testset nop3
 random -N 1000 -T 1000 -w1 0 -w3 0

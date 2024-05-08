@@ -11,8 +11,8 @@ void remove(int k) {
 }
 
 void insert(int k, int v) {
-  for (int i = len; i >= k; i--) a[i+1] = a[i];
-  a[k] = v;
+  for (int i = len; i > k; i--) a[i+1] = a[i];
+  a[k+1] = v;
   len++;
 }
 
@@ -47,10 +47,12 @@ int main() {
       cin >> l >> r;
       cout << sum(l, r) << '\n';
     }
+    // for (int i = 1; i <= len; i++) printf("%d ", a[i]);
+    // printf("\n");
   }
   cout << len << '\n';
   for (int i = 1; i <= len; i++) {
-    cout << i << " \n"[i == len];
+    cout << a[i] << " \n"[i == len];
   }
   return 0;
 }

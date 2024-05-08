@@ -4,6 +4,9 @@
   },
   "brute_force.cpp": {
     "verdict": "time_limit",
-    "excect": "small_NT"
+    "except": {
+      "samples": "correct",
+      "small_NT": "correct"
+    }
   }
 }

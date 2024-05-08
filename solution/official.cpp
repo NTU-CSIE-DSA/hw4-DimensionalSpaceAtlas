@@ -17,7 +17,7 @@ struct NodePair {
 };
 
 struct Node *create(int value) {
-  struct Node *new_node = malloc(sizeof(struct Node));
+  struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
   new_node->priority = rand();
   new_node->value = value;
   new_node->size = 1;
@@ -90,7 +90,7 @@ struct Node *insert(struct Node *root, int k, int value) {
   return root;
 }
 
-struct Node *delete(struct Node *root, int k) {
+struct Node *remove(struct Node *root, int k) {
   assert(root);
   struct NodePair np = split(root, k-1, 0);
   root = np.left;
@@ -121,7 +121,7 @@ void traverse (struct Node *root) {
 
 int main() {
   srand(100);
-  struct Node *sequence;
+  struct Node *sequence = NULL;
   int N, T;
   scanf("%d%d", &N, &T);
   for (int i = 1; i <= N; i++) {
@@ -135,7 +135,7 @@ int main() {
     if (op == 1) {
       int k;
       scanf("%d", &k);
-      sequence = delete(sequence, k);
+      sequence = remove(sequence, k);
     } else if (op == 2) {
       int k, b;
       scanf("%d%d", &k, &b);

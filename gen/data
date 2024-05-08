@@ -10,10 +10,10 @@ random -N 1000 -T 1000 -w3 0
 random -N 1000 -T 1000 -w1 0
 random -N 1000 -T 1000 -w1 8
 random -N 1000 -T 1000 -w3 8
+random -N 1000 -T 1000 -w1 8 -w3 8
 random -N 0 -T 1000
 @testset nop3
 random -N 1000 -T 1000 -w1 0 -w3 0
-random -N 1000 -T 1000 -w1 8 -w3 8
 random -N 0 -T 0
 random -N 1000 -T 0
 

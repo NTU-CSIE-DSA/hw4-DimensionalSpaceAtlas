@@ -1,11 +1,11 @@
-#include<bits/stdc++>
+#include<bits/stdc++.h>
 using namespace std;
 
 const int MAXN = 1e6+6;
 int a[MAXN];
 int len;
 
-void delete(int k) {
+void remove(int k) {
   for (int i = k; i < len; i++) a[i] = a[i+1];
   len--;
 }
@@ -37,7 +37,7 @@ int main() {
     if (op == 1) {
       int k;
       cin >> k;
-      delete(k);
+      remove(k);
     } else if (op == 2) {
       int k, b;
       cin >> k >> b;

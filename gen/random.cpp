@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 	int w3 = opt<int>("w3", 1);
 	
 	for (int i = 1; i <= N; i++) {
-		cout << (rnd.next(1, MAXv)) << " \n"[i==N];
+		cout << (rnd.next(0, MAXv)) << " \n"[i==N];
 	}
 	int len = N;
 	while (T--) {
@@ -30,11 +30,12 @@ int main(int argc, char* argv[]) {
 		}
 		assert(!operations.empty());
 		int op = rnd.any(operations);
+		cout << op << ' ';
 		if (op == 1) {
 			cout << rnd.next(1, len);
 			len--;
 		} else if (op == 2) {
-			cout << rnd.next(0, len);
+			cout << rnd.next(0, len) << ' ' << rnd.next(0, MAXv);
 			len++;
 		} else if (op == 3) {
 			int l = rnd.next(1, len);

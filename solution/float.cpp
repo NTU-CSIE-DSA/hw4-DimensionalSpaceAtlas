@@ -93,9 +93,15 @@ struct Node *insert(struct Node *root, int k, int value) {
   long double key;
   if (!root) key = 0;
   else {
-    if (k == 0) key = kth_element(root, 1, 0)->key - (long double)1e100;
-    else if (k == root->size) key = kth_element(root, k, 0)->key + (long double)1e100;
-    else {
+    if (k == 0) {
+      key = kth_element(root, 1, 0)->key;
+      if (key >= -10) key -= 0.01;
+      else key += 0.1 * key;
+    } else if (k == root->size) {
+      key = kth_element(root, k, 0)->key;
+      if (key <= 10) key += 0.1;
+      else key += 0.1 * key;
+    } else {
       Node *target1 = kth_element(root, k, 0);
       Node *target2 = kth_element(root, k+1, 0);
       key = (target1->key + target2->key) / 2;

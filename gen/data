@@ -28,7 +28,7 @@ gen -N 1000 -T 1000 -max_v 0
 gen -N 1000 -T 1000 -max_v 1
 gen -N 1000 -T 1000 -max_v 2
 gen -N 1000 -T 1000 -max_v 10
-gen -N 1000 -T 1000 -min_v 1000000000
+gen -N 1000 -T 1000 -min_v 500000000
 gen -N 1000 -T 1000 -min_v 999999999
 gen -N 1000 -T 1000 -min_v 999999998
 gen -N 1000 -T 1000 -min_v 888888888
@@ -68,155 +68,103 @@ gen -N 1000 -T 0
 
 
 @subtask only_12
-gen -N 1000000 -T 1000000 -w3 0
-gen -N 999999 -T 1000000 -w3 0
-gen -N 1000000 -T 999999 -w3 0
+gen -N 500000 -T 500000 -w3 0
+gen -N 499999 -T 500000 -w3 0
+gen -N 500000 -T 499999 -w3 0
 
-gen -N 1000000 -T 1000000 -w2 0 -w3 0
-gen -N 1000000 -T 1000000 -w1 0 -w3 0
-gen -N 1000 -T 1000000 -w1 3 -w3 0
+gen -N 500000 -T 500000 -w2 0 -w3 0
+gen -N 500000 -T 500000 -w1 0 -w3 0
+gen -N 1000 -T 500000 -w1 3 -w3 0
 
-gen -N 0 -T 1000000 -w3 0
+gen -N 0 -T 500000 -w3 0
 
-gen -N 1000000 -T 1000000 -max_v 0 -w3 0
-gen -N 1000000 -T 1000000 -max_v 1 -w3 0
-gen -N 1000000 -T 1000000 -max_v 2 -w3 0
-gen -N 1000000 -T 1000000 -max_v 10 -w3 0
-gen -N 1000000 -T 1000000 -min_v 1000000000 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999999999 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999999998 -w3 0
-gen -N 1000000 -T 1000000 -min_v 888888888 -w3 0
-gen -N 1000000 -T 1000000 -min_v 555555555 -max_v 666666666 -w3 0
+gen -N 500000 -T 500000 -max_v 0 -w3 0
+gen -N 500000 -T 500000 -max_v 1 -w3 0
+gen -N 500000 -T 500000 -max_v 2 -w3 0
+gen -N 500000 -T 500000 -max_v 10 -w3 0
+gen -N 500000 -T 500000 -min_v 500000000 -w3 0
+gen -N 500000 -T 500000 -min_v 999999999 -w3 0
+gen -N 500000 -T 500000 -min_v 999999998 -w3 0
+gen -N 500000 -T 500000 -min_v 888888888 -w3 0
+gen -N 500000 -T 500000 -min_v 555555555 -max_v 666666666 -w3 0
 
-gen -N 200000 -T 1000000 -min_v 999000000 -final_len 0 -w3 0
-gen -N 500000 -T 1000000 -min_v 999000000 -min_len 490000 -max_len 510000 -w3 0
-gen -N 6 -T 1000000 -min_v 999000000 -max_len 20 -w3 0
+gen -N 100000 -T 500000 -min_v 999000000 -final_len 0 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -min_len 490000 -max_len 510000 -w3 0
+gen -N 6 -T 500000 -min_v 999000000 -max_len 20 -w3 0
 
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 1 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 5 -w3 0
-gen -N 100000 -T 1000000 -min_v 999000000 -n_ins_p 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 3 -del_p 500000 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 1 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 5 -w3 0
+gen -N 100000 -T 500000 -min_v 999000000 -n_ins_p 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 3 -del_p 500000 -w3 0
 
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -w2 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -w2 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -del_p 1 -w1 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -del_p 987654321 -w1 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -del_p 1 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -del_p 1 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -del_p 987654321 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -del_p 987654321 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 323323 -w2 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 500252 -w2 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 697777 -w2 8 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 100000 -del_p 100000 -w3 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 1000000 -del_p 1000000 -w3 0
-
-
-@subtask small_T
-@include small_NT
-
-gen -N 1000000 -T 1000
-gen -N 999999 -T 1000
-gen -N 1000000 -T 999
-
-gen -N 1000000 -T 1000 -w2 0
-gen -N 1000000 -T 1000 -w1 0
-
-gen -N 1000000 -T 1000 -max_v 0
-gen -N 1000000 -T 1000 -max_v 1
-gen -N 1000000 -T 1000 -max_v 2
-gen -N 1000000 -T 1000 -max_v 10
-gen -N 1000000 -T 1000 -min_v 1000000000
-gen -N 1000000 -T 1000 -min_v 999999999
-gen -N 1000000 -T 1000 -min_v 999999998
-gen -N 1000000 -T 1000 -min_v 888888888
-gen -N 1000000 -T 1000 -min_v 555555555 -max_v 666666666
-
-gen -N 500000 -T 1000 -min_v 999000000 -min_len 490000 -max_len 510000
-gen -N 5 -T 1000 -min_v 999000000 -max_len 20
-
-gen -N 1000000 -T 1000 -min_v 999000000 -n_ins_p 1
-gen -N 1000000 -T 1000 -min_v 999000000 -n_ins_p 5
-gen -N 100000 -T 1000 -min_v 999000000 -n_ins_p 8
-gen -N 1000000 -T 1000 -min_v 999000000 -n_ins_p 3 -del_p 500000
-
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 0 -w2 8
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 987654321 -w2 8
-gen -N 1000000 -T 1000 -min_v 999000000 -del_p 1 -w1 8
-gen -N 1000000 -T 1000 -min_v 999000000 -del_p 987654321 -w1 8
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 0 -del_p 1 -w1 4 -w2 4
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 987654321 -del_p 1 -w1 4 -w2 4
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 0 -del_p 987654321 -w1 4 -w2 4
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 987654321 -del_p 987654321 -w1 4 -w2 4
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 323323 -w2 8
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 500252 -w2 8
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 697777 -w2 8
-
-gen -N 1000000 -T 1000 -max_range 1
-gen -N 10 -T 1000 -max_range 1
-gen -N 1000000 -T 1000 -min_range 850000 -max_range 950000 -min_v 999000000 -w1 0 -w2 0
-gen -N 1000000 -T 1000 -min_range 999000 -min_v 999000000
-gen -N 1000000 -T 1000 -min_range 999000 -min_v 999000000 -w3 2
-gen -N 1000000 -T 1000 -min_range 900000 -min_v 999000000 -w3 2
-gen -N 1000000 -T 1000 -min_range 999000 -min_v 999000000 -w1 0 -w2 0
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 100000 -del_p 100000
-gen -N 1000000 -T 1000 -min_v 999000000 -ins_p 1000000 -del_p 1000000
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -w2 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -w2 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -del_p 1 -w1 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -del_p 987654321 -w1 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -del_p 1 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -del_p 1 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -del_p 987654321 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -del_p 987654321 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 323323 -w2 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 500252 -w2 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 697777 -w2 8 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 100000 -del_p 100000 -w3 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 500000 -del_p 500000 -w3 0
 
 
 @subtask full
 @include small_NT
 @include only_12
-@include small_T
 
-gen -N 1000000 -T 1000000
-gen -N 999999 -T 1000000
-gen -N 1000000 -T 999999
+gen -N 500000 -T 500000
+gen -N 499999 -T 500000
+gen -N 500000 -T 499999
 
-gen -N 1000000 -T 1000000 -w2 0
-gen -N 1000000 -T 1000000 -w1 0
-gen -N 1000000 -T 1000000 -w2 8
-gen -N 1000000 -T 1000000 -w1 8
-gen -N 1000 -T 1000000 -w1 3
+gen -N 500000 -T 500000 -w2 0
+gen -N 500000 -T 500000 -w1 0
+gen -N 500000 -T 500000 -w2 8
+gen -N 500000 -T 500000 -w1 8
+gen -N 1000 -T 500000 -w1 3
 
-gen -N 0 -T 1000000
+gen -N 0 -T 500000
 
-gen -N 1000000 -T 1000000 -max_v 0
-gen -N 1000000 -T 1000000 -max_v 1
-gen -N 1000000 -T 1000000 -max_v 2
-gen -N 1000000 -T 1000000 -max_v 10
-gen -N 1000000 -T 1000000 -min_v 1000000000
-gen -N 1000000 -T 1000000 -min_v 999999999
-gen -N 1000000 -T 1000000 -min_v 999999998
-gen -N 1000000 -T 1000000 -min_v 888888888
-gen -N 1000000 -T 1000000 -min_v 555555555 -max_v 666666666
+gen -N 500000 -T 500000 -max_v 0
+gen -N 500000 -T 500000 -max_v 1
+gen -N 500000 -T 500000 -max_v 2
+gen -N 500000 -T 500000 -max_v 10
+gen -N 500000 -T 500000 -min_v 500000000
+gen -N 500000 -T 500000 -min_v 999999999
+gen -N 500000 -T 500000 -min_v 999999998
+gen -N 500000 -T 500000 -min_v 888888888
+gen -N 500000 -T 500000 -min_v 555555555 -max_v 666666666
 
-gen -N 200000 -T 1000000 -min_v 999000000 -final_len 0
-gen -N 500000 -T 1000000 -min_v 999000000 -min_len 490000 -max_len 510000
-gen -N 5 -T 1000000 -min_v 999000000 -max_len 20
+gen -N 100000 -T 500000 -min_v 999000000 -final_len 0
+gen -N 500000 -T 500000 -min_v 999000000 -min_len 490000 -max_len 510000
+gen -N 5 -T 500000 -min_v 999000000 -max_len 20
 
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 1
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 5
-gen -N 100000 -T 1000000 -min_v 999000000 -n_ins_p 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -n_ins_p 3 -del_p 500000
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 1
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 5
+gen -N 100000 -T 500000 -min_v 999000000 -n_ins_p 8
+gen -N 500000 -T 500000 -min_v 999000000 -n_ins_p 3 -del_p 500000
 
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -w2 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -w2 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -del_p 1 -w1 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -del_p 987654321 -w1 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -del_p 1 -w1 4 -w2 4
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -del_p 1 -w1 4 -w2 4
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 0 -del_p 987654321 -w1 4 -w2 4
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 987654321 -del_p 987654321 -w1 4 -w2 4
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 323323 -w2 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 500252 -w2 8
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 697777 -w2 8
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -w2 8
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -w2 8
+gen -N 500000 -T 500000 -min_v 999000000 -del_p 1 -w1 8
+gen -N 500000 -T 500000 -min_v 999000000 -del_p 987654321 -w1 8
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -del_p 1 -w1 4 -w2 4
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -del_p 1 -w1 4 -w2 4
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 0 -del_p 987654321 -w1 4 -w2 4
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 987654321 -del_p 987654321 -w1 4 -w2 4
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 323323 -w2 8
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 500252 -w2 8
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 697777 -w2 8
 
-gen -N 1000000 -T 1000000 -max_range 1
-gen -N 10 -T 1000000 -max_range 1
-gen -N 1000000 -T 1000000 -min_range 850000 -max_range 950000 -min_v 999000000 -w1 0 -w2 0
-gen -N 1000000 -T 1000000 -min_range 999000 -min_v 999000000
-gen -N 1000000 -T 1000000 -min_range 999000 -min_v 999000000 -w3 2
-gen -N 1000000 -T 1000000 -min_range 900000 -min_v 999000000 -w3 2
-gen -N 1000000 -T 1000000 -min_range 999000 -min_v 999000000 -w1 0 -w2 0
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 100000 -del_p 100000
-gen -N 1000000 -T 1000000 -min_v 999000000 -ins_p 1000000 -del_p 1000000
+gen -N 500000 -T 500000 -max_range 1
+gen -N 10 -T 500000 -max_range 1
+gen -N 500000 -T 500000 -min_range 850000 -max_range 950000 -min_v 999000000 -w1 0 -w2 0
+gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000
+gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000 -w3 2
+gen -N 500000 -T 500000 -min_range 900000 -min_v 999000000 -w3 2
+gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000 -w1 0 -w2 0
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 100000 -del_p 100000
+gen -N 500000 -T 500000 -min_v 999000000 -ins_p 500000 -del_p 500000

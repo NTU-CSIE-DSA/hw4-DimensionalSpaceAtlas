@@ -12,7 +12,7 @@
   "float.cpp": {
     "verdict": "incorrect",
     "except": {
-      "samples": "correct",
+      "samples": "correct"
     }
   }
 }

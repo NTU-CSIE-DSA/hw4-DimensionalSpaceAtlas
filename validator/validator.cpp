@@ -1,8 +1,8 @@
 #include "testlib.h"
 using namespace std;
 
-const int MAXN = 1'000'000;
-const int MAXT = 1'000'000;
+const int MAXN = 500'000;
+const int MAXT = 500'000;
 const int MAXv = 1'000'000'000;
 
 int main() {

@@ -89,7 +89,7 @@ struct Node *insert(struct Node *root, int k, int value) {
   return root;
 }
 
-struct Node *remove(struct Node *root, int k) {
+struct Node *erase(struct Node *root, int k) {
   assert(root);
   struct NodePair np = split(root, k-1, 0);
   root = np.left;
@@ -136,7 +136,7 @@ int main() {
     if (op == 1) {
       int k;
       scanf("%d", &k);
-      sequence = remove(sequence, k);
+      sequence = erase(sequence, k);
     } else if (op == 2) {
       int k, b;
       scanf("%d%d", &k, &b);

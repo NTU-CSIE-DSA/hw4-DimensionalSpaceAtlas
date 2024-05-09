@@ -58,7 +58,7 @@ node *merge(node *a, node *b) {
   }
 }
 
-void insert(int val, int pos) {
+void Insert(int val, int pos) {
   node *tmp = (node*) malloc(sizeof(node));
   tmp -> val = val;
   tmp -> sz = 1;
@@ -72,14 +72,14 @@ void insert(int val, int pos) {
   treap = merge(treap, t2);
 }
 
-void remove(int pos) {
+void Remove(int pos) {
   node *t1, *t2, *t3, *t4;
   split(treap, &t1, &t2, pos - 1);
   split(t2, &t3, &t4, 1);
   treap = merge(t1, t4);
 }
 
-long long query(int l, int r) {
+long long Query(int l, int r) {
   node *t1, *t2, *t3, *t4;
   split(treap, &t1, &t2, l - 1);
   split(t2, &t3, &t4, r - l + 1);
@@ -95,7 +95,7 @@ int main () {
   for(int i = 0; i < n; i++) {
     int x;
     scanf("%d", &x);
-    insert(x, i);
+    Insert(x, i);
   }
   for(int i = 0; i < t; i++) {
     int op;
@@ -103,17 +103,17 @@ int main () {
     if(op == 1) {
       int pos;
       scanf("%d", &pos);
-      remove(pos);
+      Remove(pos);
     }
     else if(op == 2) {
       int pos, val;
       scanf("%d%d", &pos, &val);
-      insert(val, pos);
+      Insert(val, pos);
     }
     else {
       int l, r;
       scanf("%d%d", &l, &r);
-      printf("%lld\n", query(l, r));
+      printf("%lld\n", Query(l, r));
     }
   }
   printf("%d\n", treap? treap -> sz: 0);

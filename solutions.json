@@ -8,5 +8,13 @@
       "samples": "correct",
       "small_NT": "correct"
     }
+  },
+  "float.cpp": {
+    "verdict": "incorrect",
+    "except": {
+      "samples": "correct",
+      "small_NT": "correct",
+      "small_T": "correct"
+    }
   }
 }

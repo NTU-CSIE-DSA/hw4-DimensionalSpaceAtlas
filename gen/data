@@ -161,10 +161,10 @@ gen -N 500000 -T 500000 -min_v 999000000 -ins_p 697777 -w2 8
 
 gen -N 500000 -T 500000 -max_range 1
 gen -N 10 -T 500000 -max_range 1
-gen -N 500000 -T 500000 -min_range 850000 -max_range 950000 -min_v 999000000 -w1 0 -w2 0
-gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000
-gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000 -w3 2
-gen -N 500000 -T 500000 -min_range 900000 -min_v 999000000 -w3 2
-gen -N 500000 -T 500000 -min_range 999000 -min_v 999000000 -w1 0 -w2 0
+gen -N 500000 -T 500000 -min_range 350000 -max_range 450000 -min_v 999000000 -w1 0 -w2 0
+gen -N 500000 -T 500000 -min_range 499000 -min_v 999000000
+gen -N 500000 -T 500000 -min_range 499000 -min_v 999000000 -w3 2
+gen -N 500000 -T 500000 -min_range 490000 -min_v 999000000 -w3 2
+gen -N 500000 -T 500000 -min_range 490000 -min_v 999000000 -w1 0 -w2 0
 gen -N 500000 -T 500000 -min_v 999000000 -ins_p 100000 -del_p 100000
 gen -N 500000 -T 500000 -min_v 999000000 -ins_p 500000 -del_p 500000

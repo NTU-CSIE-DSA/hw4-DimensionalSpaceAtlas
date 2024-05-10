@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
-#include<stdbool.h>
 
 
 struct Node {
@@ -120,11 +119,11 @@ long long calc_sum(struct Node *root, int l, int r, int shift) {
 
 /* Print the sequence.
    Whether you print one more space in the last line, the verdict won't change.  */
-void traverse (struct Node *root, bool last) {
+void traverse (struct Node *root) {
   if (!root) return;
-  traverse(root->left, 0);
-  printf("%d%c", root->value, " \n"[last & !root->right]);
-  traverse(root->right, last);
+  traverse(root->left);
+  printf("%d ", root->value);
+  traverse(root->right);
 }
 
 int main() {
@@ -158,6 +157,7 @@ int main() {
 
   if(sequence) printf("%d\n", sequence->size);
   else printf("0\n");
-  traverse(sequence, 1);
+  traverse(sequence);
+  printf("\n");
   return 0;
 }

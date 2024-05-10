@@ -156,7 +156,7 @@ int main() {
   else printf("0\n");
   traverse(sequence);
   printf("\n");
-	return 0;
+  return 0;
 }
 ```
 

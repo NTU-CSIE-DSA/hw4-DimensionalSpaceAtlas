@@ -15,6 +15,7 @@ struct NodePair {
   struct Node *left, *right;
 };
 
+/* Create a new node.  */
 struct Node *create(int value) {
   struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
   new_node->priority = rand();
@@ -26,10 +27,12 @@ struct Node *create(int value) {
   return new_node;
 }
 
+/* Return the root's order in the sequence.  */
 int order(struct Node *root, int shift) {
   return shift + root->size - ((root->right)? root->right->size : 0);
 }
 
+/* Update roots' size and sum.  */
 void update(struct Node *root) {
   root->size = 1;
   root->sum = root->value;
@@ -43,6 +46,7 @@ void update(struct Node *root) {
   }
 }
 
+/* Use root's order as its key.  */
 struct NodePair split(struct Node *root, int k, int shift) {
   struct NodePair np;
   if (!root) {
@@ -113,6 +117,7 @@ long long calc_sum(struct Node *root, int l, int r, int shift) {
   return sum;
 }
 
+/* Print the sequence.  */
 void traverse (struct Node *root) {
   if (!root) return;
   traverse(root->left);
@@ -130,8 +135,9 @@ int main() {
     scanf("%d", &a);
     sequence = insert(sequence, i-1, a);
   }
-  int op;
+
   while (T--) {
+    int op;
     scanf("%d", &op);
     if (op == 1) {
       int k;
@@ -147,6 +153,7 @@ int main() {
       printf("%lld\n", calc_sum(sequence, l, r, 0));
     }
   }
+
   if(sequence) printf("%d\n", sequence->size);
   else printf("0\n");
   traverse(sequence);

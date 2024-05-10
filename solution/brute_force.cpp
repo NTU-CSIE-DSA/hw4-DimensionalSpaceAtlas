@@ -1,11 +1,9 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include<stdio.h>
 
-const int MAXN = 1e6+6;
-int a[MAXN];
+int a[(int)1e6+6];
 int len;
 
-void remove(int k) {
+void erase(int k) {
   for (int i = k; i < len; i++) a[i] = a[i+1];
   len--;
 }
@@ -23,36 +21,32 @@ long long sum(int l, int r) {
 }
 
 int main() {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
   int N, T;
-  cin >> N >> T;
+  scanf("%d%d", &N, &T);
   for (int i = 1; i <= N; i++) {
-    cin >> a[i];
+    scanf("%d", &a[i]);
     len++;
   }
   while (T--) {
     int op;
-    cin >> op;
+    scanf("%d", &op);
     if (op == 1) {
       int k;
-      cin >> k;
-      remove(k);
+      scanf("%d", &k);
+      erase(k);
     } else if (op == 2) {
       int k, b;
-      cin >> k >> b;
+      scanf("%d%d", &k, &b);
       insert(k, b);
     } else if (op == 3) {
       int l, r;
-      cin >> l >> r;
-      cout << sum(l, r) << '\n';
+      scanf("%d%d", &l, &r);
+      printf("%lld\n", sum(l, r));
     }
-    // for (int i = 1; i <= len; i++) printf("%d ", a[i]);
-    // printf("\n");
   }
-  cout << len << '\n';
+  printf("%d\n", len);
   for (int i = 1; i <= len; i++) {
-    cout << a[i] << " \n"[i == len];
+    printf("%d%c", a[i], " \n"[i == len]);
   }
   return 0;
 }

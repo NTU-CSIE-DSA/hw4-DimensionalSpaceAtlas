@@ -82,6 +82,6 @@ int main(int argc, char* argv[]) {
 		}
 		cout << '\n';
 	}
-  assert(len == -1 || len == final_len);
+  assert(final_len == -1 || len == final_len);
 	return 0;
 }

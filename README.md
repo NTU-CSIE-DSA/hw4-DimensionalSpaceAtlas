@@ -6,6 +6,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
+#include<stdbool.h>
 
 
 struct Node {
@@ -20,6 +21,7 @@ struct NodePair {
   struct Node *left, *right;
 };
 
+/* Create a new node.  */
 struct Node *create(int value) {
   struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
   new_node->priority = rand();
@@ -31,10 +33,12 @@ struct Node *create(int value) {
   return new_node;
 }
 
+/* Return the root's order in the sequence.  */
 int order(struct Node *root, int shift) {
   return shift + root->size - ((root->right)? root->right->size : 0);
 }
 
+/* Update roots' size and sum.  */
 void update(struct Node *root) {
   root->size = 1;
   root->sum = root->value;
@@ -48,6 +52,7 @@ void update(struct Node *root) {
   }
 }
 
+/* Use root's order as its key.  */
 struct NodePair split(struct Node *root, int k, int shift) {
   struct NodePair np;
   if (!root) {
@@ -118,11 +123,13 @@ long long calc_sum(struct Node *root, int l, int r, int shift) {
   return sum;
 }
 
-void traverse (struct Node *root) {
+/* Print the sequence.
+   Whether you print one more space in the last line, the verdict won't change.  */
+void traverse (struct Node *root, bool last) {
   if (!root) return;
-  traverse(root->left);
-  printf("%d ", root->value);
-  traverse(root->right);
+  traverse(root->left, 0);
+  printf("%d%c", root->value, " \n"[last & !root->right]);
+  traverse(root->right, last);
 }
 
 int main() {
@@ -135,8 +142,9 @@ int main() {
     scanf("%d", &a);
     sequence = insert(sequence, i-1, a);
   }
-  int op;
+
   while (T--) {
+    int op;
     scanf("%d", &op);
     if (op == 1) {
       int k;
@@ -152,10 +160,10 @@ int main() {
       printf("%lld\n", calc_sum(sequence, l, r, 0));
     }
   }
+
   if(sequence) printf("%d\n", sequence->size);
   else printf("0\n");
-  traverse(sequence);
-  printf("\n");
+  traverse(sequence, 1);
   return 0;
 }
 ```

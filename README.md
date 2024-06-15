@@ -174,15 +174,11 @@ int main() {
 ```
 
 ## Common Mistakes
-<!--
-* One may want to create an $(N\times T)$-size 2D array. The maximum size of this array is approximately $c \cdot 10^6 \cdot 5\cdot 10^5 (\text{bytes})\approx c\cdot 480000 (\text{MB})$, which exceeds the memory limit.
-* You should ensure your binary search finds the last rank even if there are multiple classmates with the same power.
-* You should use store power-related data using `long long` to prevent overflow.
--->
+* Carefully handle cases involving `NULL`.
+* When searching for an element's position, remember to shift when traversing to the right child.
 
 ## Coding Tips
-<!--
-* In order to directly update the power for each player, use `n_up` and `last_up` to record the information of operation 2.
-* Always call `update()` when you want to inquire a classmate's power to ensure you obtain the correct power. Let the return value of `update()` be the power can simplify your code.
--->
+* Make the update process a function to reduce coding complexity.
+* Let the return value of split be `NodePair` to avoid using double pointers.
+* Use a fixed seed to ensure the code is deterministic.
   
